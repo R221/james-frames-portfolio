@@ -1,0 +1,1 @@
+/home/rj/Documents/coding-portfolio/ClientApp/tsconfig.app.json
