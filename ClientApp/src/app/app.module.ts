@@ -9,11 +9,13 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { ImageComponent } from './image/image/image.component';
+import { ImageComponent } from './images/image/image.component';
 import { GalleryComponent } from './gallery/gallery.component';
-import { ImageDetailComponent } from './image/image-detail/image-detail.component';
+import { ImageDetailComponent } from './images/image-detail/image-detail.component';
 import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ImageFilterPipe } from './images/shared/filter.pipe';
+import { ImageService } from './images/shared/image.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
     ImageComponent,
     GalleryComponent,
     ImageDetailComponent,
-    AboutComponent
+    AboutComponent,
+    ImageFilterPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,7 +42,7 @@ import { AppRoutingModule } from './app-routing.module';
     ]),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ImageFilterPipe, ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

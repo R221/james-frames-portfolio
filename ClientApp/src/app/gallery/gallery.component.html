@@ -1,1 +1,41 @@
-<p>gallery works!</p>
+<br><br>
+
+<figure>
+    <blockquote class="blockquote text-center fs-2">
+      <p>
+       A word is worth a thousand pictures.
+      </p>
+    </blockquote>
+    <figcaption class="blockquote-footer text-center">
+      possibly me
+    </figcaption>
+  </figure>
+
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="gallery-buttons" aria-label="filter buttons">
+        <a class="btn btn-outline-dark btn-md m-2" [class.active]="filterBy==='all'" (click)="filterBy='all'" 
+      role="button"> All </a>
+        <a class="btn btn-outline-dark btn-md m-2" [class.active]="filterBy==='japan'" (click)="filterBy='japan'" 
+      role="button"> Japan </a>
+        <a class="btn btn-outline-dark btn-md m-2 disabled" [class.active]="filterBy==='california'" (click)="filterBy='california'" 
+      role="button"> California-soon </a>
+        <a class="btn btn-outline-dark btn-md m-2 disabled" [class.active]="filterBy==='england'" (click)="filterBy='england'" 
+      role="button"> England-soon </a>
+      <a class="btn btn-outline-dark btn-md m-2 disabled" [class.active]="filterBy==='england'" (click)="filterBy='england'" 
+      role="button"> Portraits-soon </a>
+      </div>
+      </div>
+
+    <div class="row">
+    <ul id="thumbnailsList">
+        <li *ngFor="let image of (visibleImages | imageFilter:filterBy!)" >
+            <br><br>
+            <h5 class="mb-2 caption">"{{image.caption}}"</h5>
+            <a href="{{image.link}}">
+                <div class="watermarked">
+                <img class="image-fluid img-thumbnail rounded" src="{{image.url}}" alt="{{image.caption}}">
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
