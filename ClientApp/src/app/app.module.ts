@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -40,7 +41,8 @@ import { ImageService } from './images/shared/image.service';
       { path: 'About', component: AboutComponent },
       { path: 'Gallery', component: GalleryComponent },
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [ImageFilterPipe, ImageService],
   bootstrap: [AppComponent]
