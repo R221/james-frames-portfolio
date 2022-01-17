@@ -17,7 +17,6 @@ import { AboutComponent } from './about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ImageFilterPipe } from './images/shared/filter.pipe';
 import { ImageService } from './images/shared/image.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +28,7 @@ import { ImageService } from './images/shared/image.service';
     GalleryComponent,
     ImageDetailComponent,
     AboutComponent,
-    ImageFilterPipe
+    ImageFilterPipe,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,8 +40,8 @@ import { ImageService } from './images/shared/image.service';
       { path: 'About', component: AboutComponent },
       { path: 'Gallery', component: GalleryComponent },
     ]),
-    AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule    
   ],
   providers: [ImageFilterPipe, ImageService],
   bootstrap: [AppComponent]
