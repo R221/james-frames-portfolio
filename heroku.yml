@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: src/server.js
+  web: ClientApp/src/server.js
