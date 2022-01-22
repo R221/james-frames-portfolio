@@ -30,5 +30,4 @@ RUN dotnet publish "coding-portfolio.csproj" -c Release -o /app/publish /p:UseAp
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-# ENTRYPOINT ["dotnet", "coding-portfolio.dll"]
-ENTRYPOINT ASPNETCORE_URLS=http://*:$PORT dotnet coding-portfolio.dll
+CMD ["dotnet", "coding-portfolio.dll"]
